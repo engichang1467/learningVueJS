@@ -1,19 +1,16 @@
 <template>
   <div id="app" class="container mt-5">
-    <checkout :cart="cart"
+    <router-view 
+              :cart="cart"
               :cartQty="cartQty"
               :cartTotal="cartTotal"
-              @delete="deleteItem"
-              @add="addItem"></checkout>
-    <products :cart="cart"
-              :cartQty="cartQty"
-              :cartTotal="cartTotal"
-              @toggle="toggleSliderStatus"
-              @delete="deleteItem"
-              :sliderStatus="sliderStatus"
               :maximum.sync="maximum"
               :products="products"
-              @add="addItem"></products>
+              :sliderStatus="sliderStatus"
+              @add="addItem"
+              @delete="deleteItem"
+              @toggle="toggleSliderStatus"
+              ></router-view>
     
   </div>
 </template>
@@ -23,8 +20,8 @@
 // import ProductList from './components/ProductList.vue';
 // import PriceSlider from './components/PriceSlider.vue';
 // import Navbar from './components/Navbar.vue';
-import Products from './components/Products.vue';
-import Checkout from './components/Checkout.vue';
+// import Products from './components/Products.vue';
+// import Checkout from './components/Checkout.vue';
 
 export default {
   name: "app",
@@ -33,8 +30,8 @@ export default {
     // ProductList,
     // PriceSlider,
     // Navbar,
-    Products,
-    Checkout 
+    // Products,
+    // Checkout 
 
   },
   data: function() {
